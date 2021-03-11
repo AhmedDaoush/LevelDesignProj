@@ -5,24 +5,27 @@ namespace _LevelDesignProj.Scripts.Enemies
 {
     public class PlayerDetection : MonoBehaviour
     {
-        
+        [SerializeField]private float eyeSight;
         [SerializeField] private EventSO playerDetected;
-        private ConeCollider _eyeSight;
 
+        private MeshCollider range;
+        
         private void Awake()
         {
-            _eyeSight = GetComponent<ConeCollider>();
+            range = GetComponent<MeshCollider>();
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.CompareTag("Player"))
             {
+                range.enabled = false;
                 if (CheckLineOfSight(other.transform.position))
                 {
                     Debug.Log("Final Hit");
                     playerDetected.raise();
                 }
+                range.enabled = true;
             }
         }
 
@@ -31,18 +34,30 @@ namespace _LevelDesignProj.Scripts.Enemies
             Ray sight = new Ray(transform.position, playerPosition - transform.position);
             bool found = false;
             RaycastHit hit;              
-            Debug.DrawRay(transform.position, playerPosition - transform.position, Color.red);
+            Debug.DrawRay(transform.position, playerPosition - transform.position, Color.red, 3);
 
-            var y = Physics.RaycastAll(sight, _eyeSight.GetDistance);
-
-            foreach (var x in y)
+            if (Physics.Raycast(sight, out hit,  eyeSight))
             {
-                if (x.collider.CompareTag("Player"))
+                if (hit.transform == transform)
                 {
-                    found = true;
+                    RaycastHit hit2;  
+                    sight = new Ray(hit.point, playerPosition - hit.point);
+                    
+                    if (Physics.Raycast( sight, out hit2, 5))
+                    {
+                        Debug.Log(hit2.collider.name);
+                        Debug.DrawRay(hit.point, playerPosition-hit.point, Color.blue, 5);
+                        if (hit.collider.CompareTag("Player"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                else if (hit.collider.CompareTag("Player"))
+                {
+                    return true;
                 }
             }
-            
             return found;
         }
     }
