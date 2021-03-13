@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: eyeSight
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 261007116336267764, guid: ed40d49149f22e541b726335f0c9af44, type: 3}
+      propertyPath: eyeSightRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1580818303452854963, guid: ed40d49149f22e541b726335f0c9af44, type: 3}
       propertyPath: m_Name
       value: EyesSight

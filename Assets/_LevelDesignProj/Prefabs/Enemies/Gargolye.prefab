@@ -58,8 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b37d810918a48dbb48c4a78c80ebe83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angularSpeed: 0
-  rotationAngle: {x: 0, y: 0, z: 0}
+  angularSpeed: 0.3
+  rotationAngleFrom: {x: 0, y: 90, z: 0}
+  rotationAngleTo: {x: 0, y: 0, z: 0}
 --- !u!1001 &1465410255074832688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,6 +68,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6045940017043510981}
     m_Modifications:
+    - target: {fileID: 261007116336267764, guid: ed40d49149f22e541b726335f0c9af44, type: 3}
+      propertyPath: eyeSightRange
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 610915022785628707, guid: ed40d49149f22e541b726335f0c9af44, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -85,11 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966811360537365096, guid: ed40d49149f22e541b726335f0c9af44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.585
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 6966811360537365096, guid: ed40d49149f22e541b726335f0c9af44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.304
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 6966811360537365096, guid: ed40d49149f22e541b726335f0c9af44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -140,6 +145,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
+      propertyPath: m_TagString
+      value: Enemies
       objectReference: {fileID: 0}
     - target: {fileID: 100132, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
       propertyPath: m_Layer
@@ -199,11 +208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 13700004, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
       propertyPath: m_AABB.m_Center.z
-      value: -0.10497527
+      value: 0.6705946
       objectReference: {fileID: 0}
     - target: {fileID: 13700004, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
       propertyPath: m_AABB.m_Extent.z
-      value: 0.5534062
+      value: 1.3289765
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}

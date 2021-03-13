@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc484e936f9431eb9a674e4211c6bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeSight: 0
+  eyeSightRange: 0
   playerDetected: {fileID: 11400000, guid: b54c203e854a6104c971b7372e004698, type: 2}
 --- !u!64 &5295881732285287100
 MeshCollider:
@@ -133,6 +133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 1cec7e442949718499ea34a4e37ba8fb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 398d43c2ba99e224ba5500c30d776b16, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cec7e442949718499ea34a4e37ba8fb, type: 3}
 --- !u!4 &6216825334821213249 stripped

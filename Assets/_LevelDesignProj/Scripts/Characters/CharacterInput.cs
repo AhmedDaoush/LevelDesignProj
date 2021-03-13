@@ -23,9 +23,9 @@ public class CharacterInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+            Velocity = Vector3.zero;
         if(bInput)
         {
-            Velocity = Vector3.zero;
             if(Input.GetKey(KeyCode.W))
             {
                 Velocity += transform.forward;
@@ -43,10 +43,19 @@ public class CharacterInput : MonoBehaviour
                 Velocity -= transform.right;
             }
             Velocity *= Speed;
-            characterController.SimpleMove(Velocity);
             if(Velocity.sqrMagnitude > 0)
                 Character.forward = Velocity;
-            Anim.SetFloat("Speed", Velocity.magnitude);
         }
+            Anim.SetFloat("Speed", Velocity.magnitude);
+            characterController.SimpleMove(Velocity);
+    }
+    public void StopInput()
+    {
+        bInput = false;
+        Debug.Log("player detected");
+    }
+    public void ResumeInput()
+    {
+        bInput = true;
     }
 }
