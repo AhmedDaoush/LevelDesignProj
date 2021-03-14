@@ -55,6 +55,7 @@ public class CharacterInput : MonoBehaviour
     }
     public void ResumeInput()
     {
+        Debug.Log("input");
         bInput = true;
     }
 }

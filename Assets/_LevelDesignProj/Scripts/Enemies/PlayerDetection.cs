@@ -38,6 +38,7 @@ namespace _LevelDesignProj.Scripts.Enemies
                 {
                     RaycastHit hit2;
                     sight = new Ray(hit.point, playerPosition - hit.point);
+                    Debug.DrawRay(transform.position, playerPosition + new Vector3(0, 0.55f, 0), Color.blue);
                     if (Physics.Raycast(sight, out hit2, 5))
                     {
                         if (hit.collider.CompareTag("Player"))

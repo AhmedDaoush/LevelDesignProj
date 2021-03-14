@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoseMenu : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject LosePanel;
+    GameObject LosePanel; 
+    [SerializeField]
+    GameObject WinPanel;
     public void OpenLosePanel()
     {
         LosePanel.SetActive(true);
@@ -13,5 +15,10 @@ public class LoseMenu : MonoBehaviour
     public void CloseLosePanel()
     {
         LosePanel.SetActive(false);
+    }
+    public void OpenWinPanel()
+    {
+        WinPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
