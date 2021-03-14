@@ -7,7 +7,7 @@ public class CharacterInput : MonoBehaviour
 {
     [SerializeField]
     float Speed = 10;
-    bool bInput = true;
+    bool bInput = false;
     CharacterController characterController;
     Animator Anim;
     Vector3 Velocity = Vector3.zero;
@@ -52,7 +52,6 @@ public class CharacterInput : MonoBehaviour
     public void StopInput()
     {
         bInput = false;
-        Debug.Log("player detected");
     }
     public void ResumeInput()
     {
